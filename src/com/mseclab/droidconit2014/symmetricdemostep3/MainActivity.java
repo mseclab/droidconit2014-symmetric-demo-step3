@@ -1,6 +1,5 @@
 package com.mseclab.droidconit2014.symmetricdemostep3;
 
-import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -14,7 +13,6 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
@@ -24,7 +22,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
@@ -45,6 +42,7 @@ public class MainActivity extends Activity {
 	private final static String PREF_NAME = "DroidconFile";
 	private final static String PREF_KEY = "key_pref";
 
+	// NEVED DO THIS....
 	private static final byte[] IV = "1234567890abcdef".getBytes();
 
 	private static SecretKey key = null;
@@ -75,6 +73,7 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.action_discard:
 			outView.setText("");
+			key = null;
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
